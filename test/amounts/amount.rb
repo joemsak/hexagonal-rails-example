@@ -23,6 +23,8 @@ class Amount
   def ==(other)
     if zero? && other.zero?
       true
+    elsif other.is_a?(self.class)
+      to_f == other.to_f
     elsif !other.is_a?(Amount)
       to_i == other
     else

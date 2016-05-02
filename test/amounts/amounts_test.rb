@@ -33,6 +33,8 @@ class AmountsTest < Minitest::Test
   def test_add_dollars_and_cents
     assert_equal(300, Cents[150] + Dollars[1.5])
     assert_equal(150.01, Dollars[150] + Cents[1])
+    assert_equal(2.50, Dollars[1.50] + Cents[100])
+    assert_equal(250, Cents[100] + Dollars[1.50])
   end
 
   def test_add_amounts_and_numbers

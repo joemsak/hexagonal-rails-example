@@ -14,6 +14,10 @@ class Expense
       @@expenses
     end
 
+    def by_category(category)
+      all.select { |e| e.category == category }
+    end
+
     def first
       all[0]
     end
